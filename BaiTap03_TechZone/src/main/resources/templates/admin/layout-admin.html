@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title layout:title-pattern="$CONTENT_TITLE - TechZone Admin">TechZone Admin</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <style>
+        body { background-color: #f4f6f9; }
+        .avatar-header {
+            width: 48px; height: 48px; object-fit: cover;
+            border-radius: 50%; border: 2px solid #dee2e6;
+        }
+        .main-content { min-height: 70vh; padding: 30px 0; }
+        .site-footer {
+            background-color: #212529; color: #f8f9fa;
+            padding: 16px 0; text-align: center; margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER: fragment rieng, tai su dung o moi trang -->
+    <div th:replace="~{admin/header :: header}"></div>
+
+    <!-- CONTENT: noi dung rieng cua tung trang se duoc chen vao day -->
+    <main class="container main-content">
+        <div layout:fragment="content">
+            <p>Noi dung mac dinh (se bi thay the boi trang con)</p>
+        </div>
+    </main>
+
+    <!-- FOOTER: fragment rieng, tai su dung o moi trang -->
+    <div th:replace="~{admin/footer :: footer}"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
